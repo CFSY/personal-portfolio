@@ -172,5 +172,9 @@ hr {
     a {
         @extend %link-dark;
         padding: 0px 10px;
+
+        &:hover {
+            color: $accent-color;
+        }
     }
 }
