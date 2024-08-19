@@ -3,8 +3,13 @@ $max-width: {{ .Param "style.pageWidth" | default "750px;" }};
 $avatar-size: {{ .Param "style.avatarSize" | default "90px;" }};
 
 // Colors
-$black: {{ .Param "style.colorBlack" | default "#222222" }};
-$red: {{ .Param "style.colorRed" | default "#dc3545" }};
+$text-color: {{ .Param "style.colorText" | default "#EEEEEE" }};
+$accent-color: {{ .Param "style.colorAccent" | default "#EC625F" }};
+$background-color: {{ .Param "style.backgroundColor" | default "#191919" }};
+$background-secondary-color: {{ .Param "style.backgroundSecondaryColor" | default "#414141" }};
+$hr-color: {{ .Param "style.hrColor" | default "#525252" }};
+$border-color: {{ .Param "style.borderColor" | default "#525252" }};
+
 
 // Font
 $font-family: {{ .Param "style.fontFamily" | default "Inconsolata" }};
@@ -16,36 +21,44 @@ $y-medium: 1.0rem;
 
 // Placeholders
 %link-default {
-    color: $red;
+    color: $accent-color;
     text-decoration: none;
     & * {
-        color: $red;
+        color: $accent-color;
     }
     &:hover {
-        color: $red;
+        color: $accent-color;
         text-decoration: underline;
     }
 }
 %link-dark {
-    color: $black;
+    color: $text-color;
     text-decoration: none;
     & * {
-        color: $black;
+        color: $text-color;
     }
     &:hover {
-        color: $black;
+        color: $text-color;
         text-decoration: underline;
     }
 }
 %table-cell {
-    border: 1px solid #cccccc;
+    border: 1px solid $border-color;
     padding: 6px 12px;
     text-align: left;
 }
 
 // Style
+body {
+    background-color: $background-color; // Apply background color to body
+}
+hr {
+    border: none;
+    border-top: 1px solid $hr-color;
+    margin: $y-medium 0;
+}
 * {
-    color: $black;
+    color: $text-color;
     font-family: $font-family;
     font-size: $font-size;
     line-height: 1.2;
@@ -129,7 +142,7 @@ $y-medium: 1.0rem;
             @extend %table-cell;
         }
         & tr:nth-child(2n) {
-            background-color: #f8f8f8;
+            background-color: $background-secondary-color;
         }
     }
     blockquote {
@@ -139,9 +152,9 @@ $y-medium: 1.0rem;
         padding: 8px 8px;
     }
     code {
-        color: $black;
-        background-color: #f8f8f8;
-        border: 1px solid #cccccc;
+        color: $text-color;
+        background-color: $background-secondary-color;
+        border: 1px solid $border-color;
         border-radius: 10%;
         padding: 0px 4px;
     }
