@@ -33,3 +33,7 @@ Modernised legacy systems by migrating COBOL scripts to Java Spring Batch, while
 ### [CHAD](https://github.com/CFSY/CHAD)
 
 Developed a real-time multiplayer game in Unity, implementing custom networking protocols and performance optimizations.
+
+### [Tic-Tac-Toe](https://threejs-tictactoe.vercel.app)
+
+Exploring 3D on the web with a beautiful rendition of tic-tac-toe powered by three.js and a simple minimax AI.
